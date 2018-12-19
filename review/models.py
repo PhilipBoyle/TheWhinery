@@ -8,9 +8,6 @@ from sqlalchemy.orm import relationship, backref
 from flask_login import UserMixin
 
 engine = create_engine('postgresql+psycopg2://student7:student:123@206.189.124.205:5432/northwind7')
-# engine.set_client_encoding('utf-8')
-
-#Base = declarative_base()
 
 @login_manager.user_loader
 def load_user(id):

@@ -73,3 +73,9 @@ h2, h3, h4 {
     border-top: 2px solid #971111;
 
 }
+
+.results{
+    padding: 20px 20px 70px 20px;
+    background-color: #ffffff;
+    border: 3px solid #971111;
+}

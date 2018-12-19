@@ -72,3 +72,10 @@ def review_detail(idnum):
     return render_template('review/review_detail.html', title='Review Detail', review=review)
 
 
+@app.route('/search')
+def search():  # search_word):
+    review = Review.query.get_or_404
+    results = Review.query.filter(Review.description.contains('sweet')).all()
+    # results = Review.query.filter(Review.description.contains(search_word)).all()
+    return render_template('review/search_results.html', title="Search Results", review=review, results=results)  # ,search_word=search_word)
+

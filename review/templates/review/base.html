@@ -22,6 +22,10 @@
             <button class="btn btn-success btn-sm">
                <a href="{{ url_for('register') }}" class="top-menu">Sign Up <span class="glyphicon glyphicon-lock"></span></a>
             </button>
+            <form action="/search">
+                <input type="text" placeholder="Search by description" name="search" id="search_word">
+                <button type="submit" href="" ><!--{{ url_for('search', search_word='sweet')}}--><span class="glyphicon glyphicon-search"></span></button>
+            </form>
         </div>
         <h1><a href="/">The Whinery</a></h1>
     </div>
