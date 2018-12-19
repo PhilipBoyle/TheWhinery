@@ -1,0 +1,11 @@
+{% extends "review/base.html" %}
+{% block content %}
+<div class="review">
+    <h2>{{ review.title }}</h2>
+    <p>Country of Origin: {{ review.country }}</p>
+    <hr>
+    <p>Taster: {{ review.taster_name }}</p>
+    <p>Titter: {{ review.taster_twitter_handle }}</p>
+    <p>{{ review.description }}</p>
+</div>
+{% endblock content %}

@@ -1,0 +1,59 @@
+
+hr { border-top: 2px solid black;}
+
+body {
+    background: url("/static/img/bg.jpg") no-repeat fixed;
+    background-size: cover;
+    background-color: #bdbfc1;
+}
+
+.page-header {
+    background-color: #720031;
+    margin-top: 0;
+    padding: 20px 20px 30px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index:1;
+}
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: underline;
+}
+
+
+h1 a {
+    color: #000000;
+    font-family: 'Lobster';
+}
+
+h2, h3, h4 {
+    font-family: 'Ariel';
+    color: #000000;
+}
+
+.content {
+
+    margin-left: 40px;
+    margin-top: 150px;
+    z-index:1;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 16pt;
+    margin-right: 10px;
+}
+.review {
+    background-color: #ffffff;
+    padding: 20px 20px 70px 20px;
+    margin: 20px 20px 20px 20px;
+    border-style: solid;
+    border-width: 1px;
+}
+.review h2 a, .review h2 a:visited {
+    color: #000000;
+}
