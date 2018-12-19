@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from review import db
 from sqlalchemy.orm import relationship, backref
 
-engine = create_engine('postgresql+psycopg2://postgres:password@localhost:5432/the_whinery')
+engine = create_engine('postgresql+psycopg2://student7:student:123@206.189.124.205:5432/northwind7')
 # engine.set_client_encoding('utf-8')
 
 #Base = declarative_base()
@@ -17,8 +17,8 @@ class Account(db.Model):
     __tablename__ = "account"
  
     id = db.Column(Integer, primary_key=True)
-    username = db.Column(String)
-    email = db.Column(String)
+    username = db.Column(String, unique=True)
+    email = db.Column(String, unique=True)
     password = db.Column(String)
 
 

@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Review Detail </title>
-    <link rel="stylesheet" href="../static/css/main.css">
-</head>
-<body>
+{% extends "review/base.html" %}
+{% block content %}
 <div class="review">
     <h2>{{ review.title }}</h2>
     <hr>
@@ -14,5 +8,4 @@
     <p>{{ review.description }}</p>
     <p>Country of Origin: {{ review.country }}</p>
 </div>
-</body>
-</html>
+{% endblock content %}
