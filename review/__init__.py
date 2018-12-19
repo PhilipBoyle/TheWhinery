@@ -11,8 +11,8 @@ login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 try:
 	db = SQLAlchemy(app)
-	print("it worked ????")
+	print("connection successful")
 except:
-	print("didn't work")
+	print("Connection failed")
 
 from review import routes

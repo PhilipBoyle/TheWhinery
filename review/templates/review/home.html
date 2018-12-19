@@ -1,0 +1,16 @@
+{% extends "review/base.html" %}
+{% block content %}
+
+<div class="home">
+    <h2>Welcome to The Whinery!</h2>
+    <p>Like Wine?</p>
+    <hr>
+    <p>We have over 125 THOUSAND wine reviews!</p>
+    <p>Our site lets you search through the reviews to help you find the ideal wine for you.
+        As well as see some very interesting wine statistics!</p>
+    <p>Click "Search" to begin your wine journey!</p>
+    <button class="btn btn-success btn-sm">
+        <a href="{{ url_for('register') }}" > Search<span class="glyphicon glyphicon-search"></span></a>
+    </button>
+</div>
+{% endblock content %}

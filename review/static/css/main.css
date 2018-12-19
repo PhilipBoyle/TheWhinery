@@ -35,7 +35,6 @@ h2, h3, h4 {
 }
 
 .content {
-
     margin-left: 40px;
     margin-top: 150px;
     z-index:1;
@@ -51,9 +50,26 @@ h2, h3, h4 {
     background-color: #ffffff;
     padding: 20px 20px 70px 20px;
     margin: 20px 20px 20px 20px;
-    border-style: solid;
-    border-width: 1px;
+    border: 3px solid #971111;
 }
 .review h2 a, .review h2 a:visited {
     color: #000000;
+}
+
+
+.home {
+    text-align: center;
+    padding: 20px 20px 70px 20px;
+    background-color: #ffffff;
+    border: 3px solid #971111;
+    height: 100vh;
+    position: relative;
+    left: 200px;
+    top: -15px;
+
+}
+
+.home hr{
+    border-top: 2px solid #971111;
+
 }

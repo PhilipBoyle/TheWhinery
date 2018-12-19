@@ -27,7 +27,7 @@ from sqlalchemy import text
 @app.route('/')
 @app.route('/home')
 def home_page() -> 'html':
-    return render_template('/review/base.html')
+    return render_template('/review/home.html')
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -57,6 +57,12 @@ def login():
         else:
             flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('registration/login.html', title='Login', form=form)
+
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('home_page'))
 
 
 @app.route('/review/<int:idnum>')
