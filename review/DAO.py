@@ -1,7 +1,7 @@
 import json
 import psycopg2
 from datetime import date
-import fla
+
 
 
 
@@ -15,10 +15,12 @@ class DAO:
     def connect(self):
         connect_string = "dbname=" + self.dbname + " user=" + self.username + " host=206.189.124.205 port=5432 password='" + self.password + "'"
         try:
-			self.connection = psycopg2.connect(connect_string)
-			print('connected')
-		except:
-			print('connection error')
+            print(connect_string)
+            self.connection = psycopg2.connect(connect_string)
+
+            print('connected')
+        except:
+            print('connection error')
 
     def create_table(self, table_name, **kwargs):
         self.create_table = 'CREATE TABLE ' + table_name + '('
@@ -57,7 +59,7 @@ class DAO:
                 real_value = str(value)
 				
                 #Error handling in the string
-				if real_value == "None":
+                if real_value == "None":
                     real_value = "Null"
                 wine6_insert = wine6_insert + str(key) + ', '
 				
@@ -82,11 +84,11 @@ class DAO:
                     self.cursor.close()
 
 
-c = DAO('student7', 'northwind7', 'galway1992')
+c = DAO('student7', 'northwind7', 'student:123')
 c.connect()
 #c.insert_json('fulldata.json')
 #c.select_all('SELECT * FROM wine6')
-c.create_table('review',IDnum='serial NOT NULL PRIMARY KEY ',points='integer NOT NULL', title='varchar(255)', 
+c.create_table('review',idnum='serial NOT NULL PRIMARY KEY ',points='integer NOT NULL', title='varchar(255)', 
 			description="varchar(1000)", taster_name="varchar(50)", taster_twitter_handle="varchar(255)", 
 			price="integer", designation="varchar(255)", variety="varchar(255)", region_1="varchar(255)", 
 			region_2="varchar(255)", province="varchar(255)", country="varchar(255)", winery="varchar(255) NOT NULL")
