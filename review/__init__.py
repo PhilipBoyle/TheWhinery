@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:password@localhost:5432/the_whinery'
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://student7:'student:123'@localhost:5432/northwind7"
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 try:
 	db = SQLAlchemy(app)
