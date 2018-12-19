@@ -26,7 +26,7 @@ class Review(db.Model):
 
     __tablename__ = "review"
 
-    IDnum = db.Column(Integer, primary_key=True)
+    idnum = db.Column(Integer, primary_key=True)
     points = db.Column(Integer)
     title = db.Column(String)
     description = db.Column(String)
