@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e910c03f-7984-46b9-9712-5c325a725a1a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/review/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/review/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/review/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/review/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/review/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/review/templates/registration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review/templates/review/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/review/templates/review/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review/templates/review/review_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/review/templates/review/review_detail.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/review/templates/registration/login.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
@@ -89,8 +82,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/review/templates/review/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state relative-caret-position="-166">
+              <caret line="10" column="104" lean-forward="true" selection-start-line="10" selection-start-column="104" selection-end-line="10" selection-end-column="104" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -134,7 +136,6 @@
       <list>
         <option value="$PROJECT_DIR$/review/templates/base.html" />
         <option value="$PROJECT_DIR$/review/templates/login.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/review/templates/query.html" />
         <option value="$PROJECT_DIR$/review/templates/chart.html" />
         <option value="$PROJECT_DIR$/runapp.py" />
@@ -150,6 +151,7 @@
         <option value="$PROJECT_DIR$/review/__init__.py" />
         <option value="$PROJECT_DIR$/review/models.py" />
         <option value="$PROJECT_DIR$/review/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -200,6 +202,13 @@
               <item name="review" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="registration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TheWhinery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TheWhinery" type="462c0819:PsiDirectoryNode" />
+              <item name="review" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="review" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -367,13 +376,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/review/templates/review/chart.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -548,13 +550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/review/templates/review/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/review/templates/registration/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -607,6 +602,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/review/templates/review/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-166">
+          <caret line="10" column="104" lean-forward="true" selection-start-line="10" selection-start-column="104" selection-end-line="10" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
