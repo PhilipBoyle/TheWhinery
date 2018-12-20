@@ -6,11 +6,11 @@ from flask import url_for, flash, redirect
 from flask_login import login_user, current_user, logout_user, login_required
 
 from review import app
-from review.forms import RegistrationForm, LoginForm
+from review.forms import RegistrationForm, LoginForm, QueryForm
 from review.models import Account, Review
 from review import db
 
-from sqlalchemy import text
+from sqlalchemy import func, and_
 
 
 """def sql_test():
@@ -66,3 +66,20 @@ def review_detail(idnum):
     return render_template('review/review_detail.html', title='Review Detail', review=review)
 
 
+@app.route('/query', methods=['GET', 'POST'])
+def query():  # search):
+    form = QueryForm()
+    query_dict = {'points': Review.points, 'price': Review.price, 'max': db.func.max, 'min': db.func.min, 'avg': db.func.avg}
+
+    if form.validate_on_submit():
+        subq = db.session.query(query_dict[form.qr2.data](query_dict[form.qr1.data])).filter(Review.country == form.country.data)
+        x=[]
+        for r in subq:
+            x=r
+            print(r)
+        print (x[0])
+        q = Review.query.filter(Review.country == form.country.data, query_dict[form.qr1.data] == int(x[0])).all()
+
+        return render_template('query/minmaxavg.html', title='Results', q=q)
+    
+    return render_template('query/query_form.html', title='Results', form=form)

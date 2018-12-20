@@ -1,0 +1,21 @@
+
+{% extends "review/base.html" %}
+{% block content %}
+<div class="review">
+<form method="POST" action="">
+{{ form.hidden_tag() }}
+
+<table>
+<tr>
+<td>Value:<br /> {{ form.qr1 }} </td><td>
+Function:<br /> {{ form.qr2 }} </td><td>Country:<br /> {{ form.country }} </td>
+</tr>
+
+<tr>
+<td></td><td> {{ form.submit }} </td><td></td>
+</tr>
+</table>
+
+</form>
+</div>
+{% endblock content %}

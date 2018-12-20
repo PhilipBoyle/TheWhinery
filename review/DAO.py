@@ -64,7 +64,7 @@ class DAO:
                 wine6_insert = wine6_insert + str(key) + ', '
 				
 				
-                if key == 'points' or key == 'price':
+                if key == 'points' or key == 'price' or real_value== 'Null':
                     wine6_values = wine6_values + str(real_value) + ', '
                 else:
                     wine6_values = wine6_values + "'" + str(real_value.replace("'", "`")) + "'" + ', '

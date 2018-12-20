@@ -1,7 +1,7 @@
 """TODO: a file to handle the forms in the app eg: login, signup, data querying e.t.c"""
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, RadioField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 
@@ -22,3 +22,11 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
+
+
+class QueryForm(FlaskForm):
+    qr1 = RadioField("", default='points', choices=[('points', 'points'), ('price', 'price')])
+    qr2 = RadioField("", default='min', choices=[('min', 'min'), ('max', 'max'), ('avg', 'avg')])
+    country = StringField('Country', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+

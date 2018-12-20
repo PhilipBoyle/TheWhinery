@@ -1,0 +1,16 @@
+{% extends "review/base.html" %}
+{% block content %}
+<div class="review">
+    <h2>{{ title }}</h2>
+    <hr>
+        <p><table>
+        {% for req in q %}
+        <tr>
+            <td> Points: {{ req.points }}</td>
+            <td> Price : {{ req.price }} </td>
+            <td>Country: {{ req.country }}</td>
+        </tr>
+        {% endfor %}        
+        </table></p>
+</div>
+{% endblock content %}
