@@ -2,10 +2,13 @@
 {% block content %}
 <div class="review">
     <h2>{{ review.title }}</h2>
-    <p>Country of Origin: {{ review.country }}</p>
+    <p><b>Winery: </b>{{ review.winery }}</p>
+    <p><b>Origin:</b> {{ review.region_1 }}, {{ review.region_2 }}, {{ review.country }}</p>
     <hr>
-    <p>Taster: {{ review.taster_name }}</p>
-    <p>Titter: {{ review.taster_twitter_handle }}</p>
-    <p>{{ review.description }}</p>
+    <p><b>Taster:</b> {{ review.taster_name }}</p>
+    <p><b>Titter: </b>{{ review.taster_twitter_handle }}</p>
+    <p><b>Taster's Notes: </b>{{ review.description }}</p>
+    <p><strong>Price: €{{ review.price }}</strong></p>
+    <h3><strong>Taster's Score: {{ review.points }}</strong></h3>
 </div>
 {% endblock content %}

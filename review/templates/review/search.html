@@ -1,0 +1,16 @@
+{% extends 'review/base.html' %}
+{% block content %}
+<div class="results">
+        <h2>Please enter your search term:</h2>
+        <hr>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+          <dl>
+            {{ form.search_type }}
+            <p>
+            {{ form.search_term }}
+          </dl>
+          <p><input type=submit value=Search>
+        </form>
+</div>
+{% endblock content %}
