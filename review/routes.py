@@ -6,9 +6,10 @@ from flask import url_for, flash, redirect
 from flask_login import login_user, current_user, logout_user, login_required
 
 from review import app
-from review.forms import RegistrationForm, LoginForm
+from review.forms import RegistrationForm, LoginForm, SearchBar
 from review.models import Account, Review
 from review import db
+from sqlalchemy import desc
 
 from sqlalchemy import text
 
@@ -72,10 +73,29 @@ def review_detail(idnum):
     return render_template('review/review_detail.html', title='Review Detail', review=review)
 
 
-@app.route('/search')
-def search():  # search_word):
-    review = Review.query.get_or_404
-    results = Review.query.filter(Review.description.contains('sweet')).all()
-    # results = Review.query.filter(Review.description.contains(search_word)).all()
-    return render_template('review/search_results.html', title="Search Results", review=review, results=results)  # ,search_word=search_word)
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    form = SearchBar(request.form)
+    if form.validate_on_submit():
+        print('valid')
+        return redirect((url_for('search_results', search_word=form.search_term.data,
+                                 search_type=form.search_type.data)))
+    print('invalid')
+    return render_template('review/search.html', form=form)
+
+
+@app.route('/search_results/<string:search_type>/<string:search_word>',  methods=['GET', 'POST'])
+def search_results(search_word, search_type):
+    search_table = Review.country
+    if search_type == 'Country':
+        search_table = Review.country
+    if search_type == 'Description':
+        search_table = Review.description
+    if search_type == 'Taster':
+        search_table = Review.taster_name
+
+    review = Review()
+    results = Review.query.filter(search_table.contains(search_word)).order_by(desc(Review.points)).all()
+    return render_template('review/search_results.html', search_word=search_word, search_type=search_type,
+                           results=results, review=review)
 
