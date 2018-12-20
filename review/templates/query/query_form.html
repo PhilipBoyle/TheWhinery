@@ -4,16 +4,20 @@
 <div class="review">
 <form method="POST" action="">
 {{ form.hidden_tag() }}
-
-<table>
+<table class="querytable">
 <tr>
-<td>Value:<br /> {{ form.qr1 }} </td><td>
-Function:<br /> {{ form.qr2 }} </td><td>Country:<br /> {{ form.country }} </td>
+
+    <td >Value:<hr>{{ form.qr1 }} </td>
+    <td>Function:<hr>{{ form.qr2 }} </td>
+    <td>Country:<hr>{{ form.country }} </td>
+
 </tr>
 
 <tr>
-<td></td><td> {{ form.submit }} </td><td></td>
+    <td> {{ form.submit }} </td>
 </tr>
+
+
 </table>
 
 </form>

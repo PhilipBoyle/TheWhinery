@@ -28,23 +28,26 @@ from sqlalchemy import func, and_
 @app.route('/')
 @app.route('/home')
 def home_page() -> 'html':
+    """home page route"""
     return render_template('/review/home.html')
 
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
+    """ allows user to register, posts the user info to the Account table in our database"""
     form = RegistrationForm()
     if form.validate_on_submit():
         user = Account(username=form.username.data, email=form.email.data, password=form.password.data)
         db.session.add(user)
         db.session.commit()
         flash(f'Account created for {form.username.data}!', 'success')
-        return redirect(url_for('home_page'))
+        return redirect(url_for('login'))
     return render_template('registration/register.html', title='Register', form=form)
 
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    """ logs the user in, if the are already loged in it redirects to homepage"""
     if current_user.is_authenticated:
         return redirect(url_for('home_page'))
     form = LoginForm()
@@ -62,20 +65,23 @@ def login():
 
 @app.route("/logout")
 def logout():
+    """ logs the user out and redirects them back to the home page"""
     logout_user()
     return redirect(url_for('home_page'))
 
 
 @app.route('/review/<int:idnum>')
+@login_required
 def review_detail(idnum):
     """ view single review in detail"""
     review = Review.query.get_or_404(idnum)
     return render_template('review/review_detail.html', title='Review Detail', review=review)
 
 
-
 @app.route('/query', methods=['GET', 'POST'])
+@login_required
 def query():  # search):
+    """ main query function, allows user to query the data base for min/max/avg by price/score in a country"""
     form = QueryForm()
     query_dict = {'points': Review.points, 'price': Review.price, 'max': db.func.max, 'min': db.func.min, 'avg': db.func.avg}
 
@@ -92,8 +98,11 @@ def query():  # search):
     
     return render_template('query/query_form.html', title='Results', form=form)
 
+
 @app.route('/search', methods=['GET', 'POST'])
+@login_required
 def search():
+    """main search function, searches either descrpiton,taster or country by a user input string"""
     form = SearchBar(request.form)
     if form.validate_on_submit():
         print('valid')
@@ -104,7 +113,9 @@ def search():
 
 
 @app.route('/search_results/<string:search_type>/<string:search_word>',  methods=['GET', 'POST'])
+@login_required
 def search_results(search_word, search_type):
+    """ results output for search"""
     search_table = Review.country
     if search_type == 'Country':
         search_table = Review.country

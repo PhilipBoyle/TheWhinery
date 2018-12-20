@@ -17,20 +17,25 @@
 <body>
     <div class="page-header">
         <div class="top-menu">
+            {% if current_user.is_authenticated %}
+            <button class="btn btn-primary btn-sm">
+               <a href="{{ url_for('query') }}" class="top-menu">Query <span class="glyphicon glyphicon-question-sign"></span></a>
+            </button>
+            <button class="btn btn-warning btn-sm">
+                <a href="{{ url_for('search') }}" class="top-menu">Search <span class="glyphicon glyphicon-search"></span></a>
+            </button>
+            <button class="btn btn-info btn-sm">
+                <a href="{{ url_for('logout') }}" class="top-menu">Logout <span class="glyphicon glyphicon-log-out"></span></a>
+            </button>
+            {% else %}
             <button class="btn btn-info btn-sm">
                 <a href="{{ url_for('login') }}" class="top-menu">Log In <span class="glyphicon glyphicon-log-in"></span></a>
             </button>
             <button class="btn btn-success btn-sm">
                <a href="{{ url_for('register') }}" class="top-menu">Sign Up <span class="glyphicon glyphicon-lock"></span></a>
             </button>
+            {% endif %}
 
-            <button class="btn">
-               <a href="{{ url_for('query') }}" class="top-menu">query <span class="glyphicon glyphicon-lock"></span></a>
-            </button>
-            <button class="btn btn-warning btn-sm">
-                <a href="{{ url_for('search') }}" class="top-menu">Search <span class="glyphicon glyphicon-search"></span></a>
-
-            </button>
         </div>
         <h1><a href="/">The Whinery</a></h1>
     </div>

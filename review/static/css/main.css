@@ -80,3 +80,7 @@ h2, h3, h4 {
     border: 3px solid #971111;
 }
 
+.review td{
+ padding: 5px 5px 5px 5px;
+ border: 1px solid #971111;
+}
