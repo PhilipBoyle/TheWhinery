@@ -6,7 +6,7 @@ from flask import url_for, flash, redirect
 from flask_login import login_user, current_user, logout_user, login_required
 
 from review import app
-from review.forms import RegistrationForm, LoginForm, QueryForm, SearchBar
+from review.forms import RegistrationForm, LoginForm, QueryForm, SearchBar, MakeReview
 from review.models import Account, Review
 from review import db
 from sqlalchemy import desc
@@ -129,3 +129,41 @@ def search_results(search_word, search_type):
     return render_template('review/search_results.html', search_word=search_word, search_type=search_type,
                            results=results, review=review)
 
+
+@app.route('/add_review', methods=['GET', 'POST'])
+def make_review():
+    """allows user to make a review and add it to the database"""
+    form = MakeReview()
+    if form.validate_on_submit():
+        review = Review(
+            points=form.points.data,
+            title=form.title.data,
+            description=form.description.data,
+            taster_name=form.taster_name.data,
+            taster_twitter_handle=form.taster_twitter_handle.data,
+            price=form.price.data,
+            designation=form.designation.data,
+            variety=form.variety.data,
+            region_1=form.region_1.data,
+            region_2=form.region_2.data,
+            province=form.province.data,
+            country=form.country.data,
+            winery=form.winery.data
+        )
+        db.session.add(review)
+        db.session.commit()
+        flash('Your post has been created!', 'success')
+        return redirect(url_for('home_page'))
+    return render_template('review/add_review.html', title='New Post',
+                           form=form)
+
+
+@app.route("/post/<int:idnum>/delete", methods=['POST', 'GET'])
+@login_required
+def delete_review(idnum):
+    """allows user to delete a review, button available on the review detail page"""
+    review = Review.query.get_or_404(idnum)
+    db.session.delete(review)
+    db.session.commit()
+    flash('Your post has been deleted!', 'success')
+    return redirect(url_for('home_page'))

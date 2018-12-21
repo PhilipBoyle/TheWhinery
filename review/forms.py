@@ -37,3 +37,21 @@ class SearchBar(FlaskForm):
     search_type = SelectField('Search for wine:', choices=choices)
     search_term = StringField('Search', validators=[DataRequired()])
     submit = SubmitField('Login')
+
+
+class MakeReview(FlaskForm):
+
+    points = StringField('Score', validators=[DataRequired()])
+    title = StringField('Title', validators=[DataRequired()])
+    description = StringField('Notes', validators=[DataRequired()])
+    taster_name = StringField('Name', validators=[DataRequired()])
+    taster_twitter_handle = StringField('Twitter', validators=[DataRequired()])
+    price = StringField('Cost', validators=[DataRequired()])
+    designation = StringField('Designation', validators=[DataRequired()])
+    variety = StringField('Variety', validators=[DataRequired()])
+    region_1 = StringField('Region 1', validators=[DataRequired()])
+    region_2 = StringField('Region 2', validators=[DataRequired()])
+    province = StringField('Province', validators=[DataRequired()])
+    country = StringField('Country', validators=[DataRequired()])
+    winery = StringField('Winery', validators=[DataRequired()])
+    submit = SubmitField('Add Review')

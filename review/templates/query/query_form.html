@@ -2,24 +2,23 @@
 {% extends "review/base.html" %}
 {% block content %}
 <div class="review">
-<form method="POST" action="">
-{{ form.hidden_tag() }}
-<table class="querytable">
-<tr>
+    <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <table class="querytable">
+            <tr>
 
-    <td >Value:<hr>{{ form.qr1 }} </td>
-    <td>Function:<hr>{{ form.qr2 }} </td>
-    <td>Country:<hr>{{ form.country }} </td>
+                <td >Value:<hr>{{ form.qr1 }} </td>
+                <td>Function:<hr>{{ form.qr2 }} </td>
+                <td>Country:<hr>{{ form.country }} </td>
 
-</tr>
+            </tr>
 
-<tr>
-    <td> {{ form.submit }} </td>
-</tr>
+            <tr>
+                <td> {{ form.submit }} </td>
+            </tr>
+            </table>
 
-
-</table>
-
-</form>
+    </form>
+    
 </div>
 {% endblock content %}

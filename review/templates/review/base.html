@@ -18,11 +18,15 @@
     <div class="page-header">
         <div class="top-menu">
             {% if current_user.is_authenticated %}
+
             <button class="btn btn-primary btn-sm">
                <a href="{{ url_for('query') }}" class="top-menu">Query <span class="glyphicon glyphicon-question-sign"></span></a>
             </button>
             <button class="btn btn-warning btn-sm">
                 <a href="{{ url_for('search') }}" class="top-menu">Search <span class="glyphicon glyphicon-search"></span></a>
+            </button>
+            <button class="btn btn-success btn-sm">
+               <a href="{{ url_for('make_review') }}" class="top-menu">Add Review <span class="glyphicon glyphicon-plus"></span></a>
             </button>
             <button class="btn btn-info btn-sm">
                 <a href="{{ url_for('logout') }}" class="top-menu">Logout <span class="glyphicon glyphicon-log-out"></span></a>
