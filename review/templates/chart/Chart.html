@@ -1,0 +1,44 @@
+{% extends "review/base.html" %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<div class="review">
+    <div class="wrapper">
+      <h1>World Wine Reviews Chart</h1>
+      <h2>Percentage of reviews per Country</h2>
+
+	  <canvas id="wineChart" width="600" height="400"></canvas>
+    </div>
+
+    <script>
+        var wineCanvas = document.getElementById("wineChart");
+
+        Chart.defaults.global.defaultFontFamily = "Lato";
+        Chart.defaults.global.defaultFontSize = 18;
+
+        var wineData = {
+            labels: [{% for k,v in wd.items() %}
+			    "{{ k }}",{% endfor %} 
+				],
+            datasets: [
+                {
+                    data: [{% for k,v in wd.items() %}
+					    {{ v }},{% endfor %}
+						],
+                /*    backgroundColor: [
+                        "#FF6384",
+                        "#63FF84",
+                        "#84FF63",
+                        "#8463FF",
+                        "#6384FF"
+                    ] */
+                }]
+        };
+
+        var pieChart = new Chart(wineCanvas, {
+          type: 'pie',
+          data: wineData
+        });
+    </script>
+</div>
+{% endblock content %}
+

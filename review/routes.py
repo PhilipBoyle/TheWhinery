@@ -129,3 +129,17 @@ def search_results(search_word, search_type):
     return render_template('review/search_results.html', search_word=search_word, search_type=search_type,
                            results=results, review=review)
 
+@app.route('/chart', methods=[ 'GET', 'POST'])
+@login_required
+def chart():
+    wine_countries = {}
+    for qry in db.session.query(Review.country): 
+        if qry.country in wine_countries:
+            wine_countries[qry.country] += 1
+        else:
+            wine_countries[qry.country] = 1
+    print(str(wine_countries))
+    num_countries = len(wine_countries)
+    print( num_countries )
+    return render_template('chart/chart.html', title='Chart Results', wd=wine_countries)
+            

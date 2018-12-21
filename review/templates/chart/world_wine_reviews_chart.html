@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>World Wine Reviews Chart</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>    
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <div class="wrapper">
-      <h1>World Wine Reviews Chart</h1>
-      <h2>Percentage of reviews per Country</h2>
-	  
-	  <canvas id="wineChart" width="600" height="400"></canvas>
-    </div>
+{% extends "review/base.html" %}
 
-    <script src="script.js"></script>
-  </body>
-</html>
+{% block content %}
+
+<title>World Wine Reviews Chart</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<div class="wrapper">
+<h1>World Wine Reviews Chart</h1>
+<h2>Percentage of reviews per Country</h2>
+
+<canvas id="wineChart" width="600" height="400"></canvas>
+</div>
+
+<script src="script.js"></script>
+
+{% endblock content %}
