@@ -1,6 +1,9 @@
 {% extends "review/base.html" %}
 {% block content %}
 <div class="review">
+    <button class="btn btn-danger btn-sm" style="float:right">
+        <a href="{{ url_for('delete_review', idnum=review.idnum) }}" class="top-menu">Delete <span class="glyphicon glyphicon-remove"></span></a>
+    </button>
     <h2>{{ review.title }}</h2>
     <p><b>Winery: </b>{{ review.winery }}</p>
     <p><b>Origin:</b> {{ review.region_1 }}, {{ review.region_2 }}, {{ review.country }}</p>
